@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -68,6 +67,7 @@
                         <outlet property="worldClockContainerView" destination="RNJ-4M-IRB" id="zVK-qT-Icu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
         <!--System Date View Controller-->
@@ -77,12 +77,32 @@
                     <view key="view" contentMode="scaleToFill" id="MWm-Y2-fnd">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="733"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fx4-mA-Cc1">
+                                <rect key="frame" x="28" y="68" width="314" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2j-xu-xLr">
+                                <rect key="frame" x="28" y="153" width="314" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="knQ-gx-PjT"/>
                     </view>
+                    <connections>
+                        <outlet property="currentDateLabel" destination="Fx4-mA-Cc1" id="UWM-Hl-qV1"/>
+                        <outlet property="currentTimeLabel" destination="u2j-xu-xLr" id="3fV-zG-hep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nyc-IH-zQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-66"/>
+            <point key="canvasLocation" x="1437.68115942029" y="-66.629464285714278"/>
         </scene>
         <!--World Clock View Controller-->
         <scene sceneID="ZbA-i9-ddW">
@@ -91,12 +111,59 @@
                     <view key="view" contentMode="scaleToFill" id="sc2-xH-Kug">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="733"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="566-mE-N5H">
+                                <rect key="frame" x="16" y="44" width="342" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RQb-G8-YAl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23D-ik-j3v">
+                                <rect key="frame" x="16" y="120" width="342" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pvv-kZ-3Mp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-3z-7TF">
+                                <rect key="frame" x="16" y="300" width="342" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="WYy-pP-GKj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Select Country/Zone"/>
+                                <connections>
+                                    <action selector="selectCountryButtonTap:" destination="C9b-eE-4mC" eventType="touchUpInside" id="GS9-5I-0Xw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="23D-ik-j3v" firstAttribute="top" secondItem="566-mE-N5H" secondAttribute="bottom" constant="26" id="0dg-6z-DNC"/>
+                            <constraint firstItem="23D-ik-j3v" firstAttribute="trailing" secondItem="bdC-3z-7TF" secondAttribute="trailing" id="4Q4-Vh-9g4"/>
+                            <constraint firstItem="bdC-3z-7TF" firstAttribute="top" secondItem="sc2-xH-Kug" secondAttribute="top" constant="300" id="8NK-rB-74x"/>
+                            <constraint firstItem="566-mE-N5H" firstAttribute="trailing" secondItem="23D-ik-j3v" secondAttribute="trailing" id="Hb4-yi-868"/>
+                            <constraint firstItem="566-mE-N5H" firstAttribute="leading" secondItem="23D-ik-j3v" secondAttribute="leading" id="PR1-yN-NtZ"/>
+                            <constraint firstItem="23D-ik-j3v" firstAttribute="leading" secondItem="bdC-3z-7TF" secondAttribute="leading" id="awj-5l-ygf"/>
+                            <constraint firstItem="566-mE-N5H" firstAttribute="top" secondItem="sc2-xH-Kug" secondAttribute="topMargin" id="cWE-5z-YAD"/>
+                            <constraint firstItem="566-mE-N5H" firstAttribute="leading" secondItem="sc2-xH-Kug" secondAttribute="leadingMargin" id="jTY-cK-ZWO"/>
+                            <constraint firstItem="566-mE-N5H" firstAttribute="trailing" secondItem="sc2-xH-Kug" secondAttribute="trailingMargin" id="nhJ-U3-y5h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="znd-CV-pew"/>
                     </view>
+                    <connections>
+                        <outlet property="countryButton" destination="bdC-3z-7TF" id="65o-4H-JWG"/>
+                        <outlet property="dateLabel" destination="566-mE-N5H" id="Ka9-sy-mka"/>
+                        <outlet property="timeLabel" destination="23D-ik-j3v" id="O1r-gG-tjq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrR-eb-ZTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1474" y="484"/>
+            <point key="canvasLocation" x="1473.913043478261" y="483.81696428571428"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83A5F5825C60586F3CC3ED97 /* Pods_Clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDB922540C98434F9997301 /* Pods_Clock.framework */; };
 		FB315C0C263BD29400F032E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB315C0B263BD29400F032E8 /* AppDelegate.swift */; };
 		FB315C0E263BD29400F032E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB315C0D263BD29400F032E8 /* ViewController.swift */; };
 		FB315C11263BD29400F032E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB315C0F263BD29400F032E8 /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FDB922540C98434F9997301 /* Pods_Clock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AF316C1153CBA7B07D796B /* Pods-Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock.debug.xcconfig"; path = "Target Support Files/Pods-Clock/Pods-Clock.debug.xcconfig"; sourceTree = "<group>"; };
+		B31D5031717EE264666ED694 /* Pods-Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clock.release.xcconfig"; path = "Target Support Files/Pods-Clock/Pods-Clock.release.xcconfig"; sourceTree = "<group>"; };
 		FB315C08263BD29400F032E8 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB315C0B263BD29400F032E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB315C0D263BD29400F032E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A5F5825C60586F3CC3ED97 /* Pods_Clock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA380DD08660AF83CDABF83C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FDB922540C98434F9997301 /* Pods_Clock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5FB1DFFD26E38F056504CE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4AF316C1153CBA7B07D796B /* Pods-Clock.debug.xcconfig */,
+				B31D5031717EE264666ED694 /* Pods-Clock.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FB315BFF263BD29400F032E8 = {
 			isa = PBXGroup;
 			children = (
 				FB315C0A263BD29400F032E8 /* Clock */,
 				FB315C09263BD29400F032E8 /* Products */,
+				E5FB1DFFD26E38F056504CE2 /* Pods */,
+				BA380DD08660AF83CDABF83C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB315C1D263BD29500F032E8 /* Build configuration list for PBXNativeTarget "Clock" */;
 			buildPhases = (
+				DFC7C549C89557F93A9CED97 /* [CP] Check Pods Manifest.lock */,
 				FB315C04263BD29400F032E8 /* Sources */,
 				FB315C05263BD29400F032E8 /* Frameworks */,
 				FB315C06263BD29400F032E8 /* Resources */,
+				575D4C82FEABF35A17FEEC22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		575D4C82FEABF35A17FEEC22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clock/Pods-Clock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clock/Pods-Clock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clock/Pods-Clock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC7C549C89557F93A9CED97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB315C04263BD29400F032E8 /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		FB315C1E263BD29500F032E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4AF316C1153CBA7B07D796B /* Pods-Clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +383,7 @@
 		};
 		FB315C1F263BD29500F032E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B31D5031717EE264666ED694 /* Pods-Clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

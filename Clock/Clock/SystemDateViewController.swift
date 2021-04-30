@@ -10,10 +10,30 @@ import UIKit
 
 class SystemDateViewController: UIViewController {
 
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var currentDateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        // Do any additional setup after loading the view.
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, MMM dd yyyy"
+        let dateString = formatter.string(from: Date())
+        currentDateLabel.text = dateString
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self , selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTime(){
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .long
+        timeFormatter.timeZone = TimeZone(abbreviation: TimeZone.current.abbreviation() ?? " ")
+        let timeString = timeFormatter.string(from: Date())
+        currentTimeLabel.text = timeString
     }
     
 
