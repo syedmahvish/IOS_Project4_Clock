@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v3z-aF-k0h">
+                                <rect key="frame" x="20" y="58" width="374" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tUv-ze-ywc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="World Clock"/>
+                                    <segment title="System Clock"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControllerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bpE-rE-yHL"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pw-0T-Su2">
+                                <rect key="frame" x="20" y="129" width="374" height="733"/>
+                                <connections>
+                                    <segue destination="hSU-Iy-lYR" kind="embed" id="Hdx-9M-klO"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNJ-4M-IRB">
+                                <rect key="frame" x="20" y="129" width="374" height="733"/>
+                                <connections>
+                                    <segue destination="C9b-eE-4mC" kind="embed" id="0LU-Lc-isP"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v3z-aF-k0h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="13j-TL-ZI1"/>
+                            <constraint firstItem="RNJ-4M-IRB" firstAttribute="height" secondItem="2pw-0T-Su2" secondAttribute="height" id="2K7-0J-pXt"/>
+                            <constraint firstItem="2pw-0T-Su2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7IU-a9-PeJ"/>
+                            <constraint firstItem="v3z-aF-k0h" firstAttribute="trailing" secondItem="2pw-0T-Su2" secondAttribute="trailing" id="DWq-jA-FyQ"/>
+                            <constraint firstItem="v3z-aF-k0h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="FtC-ng-OBT"/>
+                            <constraint firstItem="RNJ-4M-IRB" firstAttribute="centerX" secondItem="2pw-0T-Su2" secondAttribute="centerX" id="UBB-qb-ykx"/>
+                            <constraint firstItem="v3z-aF-k0h" firstAttribute="leading" secondItem="RNJ-4M-IRB" secondAttribute="leading" id="b85-Nb-yCY"/>
+                            <constraint firstItem="2pw-0T-Su2" firstAttribute="top" secondItem="v3z-aF-k0h" secondAttribute="bottom" constant="21" id="cKD-XH-BCr"/>
+                            <constraint firstItem="RNJ-4M-IRB" firstAttribute="centerY" secondItem="2pw-0T-Su2" secondAttribute="centerY" id="do8-cK-Bq0"/>
+                            <constraint firstItem="v3z-aF-k0h" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jFl-GD-YpK"/>
+                            <constraint firstItem="2pw-0T-Su2" firstAttribute="leading" secondItem="RNJ-4M-IRB" secondAttribute="leading" id="lER-Rl-d5p"/>
+                            <constraint firstItem="2pw-0T-Su2" firstAttribute="top" secondItem="RNJ-4M-IRB" secondAttribute="top" id="nzY-il-Ed8"/>
+                            <constraint firstItem="RNJ-4M-IRB" firstAttribute="width" secondItem="2pw-0T-Su2" secondAttribute="width" id="pif-R1-UaR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="systemClockContainerView" destination="2pw-0T-Su2" id="oy2-9C-uwX"/>
+                        <outlet property="worldClockContainerView" destination="RNJ-4M-IRB" id="zVK-qT-Icu"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--System Date View Controller-->
+        <scene sceneID="HQD-iu-dIL">
+            <objects>
+                <viewController id="hSU-Iy-lYR" customClass="SystemDateViewController" customModule="Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWm-Y2-fnd">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="733"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyc-IH-zQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-66"/>
+        </scene>
+        <!--World Clock View Controller-->
+        <scene sceneID="ZbA-i9-ddW">
+            <objects>
+                <viewController id="C9b-eE-4mC" customClass="WorldClockViewController" customModule="Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sc2-xH-Kug">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="733"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrR-eb-ZTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1474" y="484"/>
         </scene>
     </scenes>
 </document>
